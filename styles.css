@@ -1,0 +1,211 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(0, 0, 0);
+    overflow-x: hidden;
+    color: white;
+}
+
+.title {
+    font-size: 50px;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    color: rgb(212, 0, 231);
+}
+
+.title h1 {
+    margin: 0;
+}
+
+.ievads {
+    margin-top: 15px;
+    text-align: center;
+    max-width: 50%;
+    font-size: 30px;
+}
+
+.iemesli {
+    max-width: 80%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    font-size: 20px;
+}
+
+h2 {
+    margin-top: 3px;
+}
+
+.down {
+    color: white;
+}
+
+.title-iemesli {
+    margin-top: 0;
+    font-size: 40px;
+    color: lightskyblue;
+} 
+
+svg {
+    color: rgb(194, 35, 35);
+}
+
+.iemesls {
+    transition: transform 0.3s ease;
+}
+
+.iemesls:hover {
+    transform: scale(1.05);
+}
+
+.accordion {
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+    cursor: pointer;
+    padding: 18px;
+    width: 60%; /* Makes the accordion not take full width */
+    margin: 10px auto; /* Center the accordion */
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    transition: 0.4s;
+    border: solid;
+    font-size: 20px;
+}
+
+.active, .accordion:hover {
+    background-color: #333333; /* Darker black on hover */
+}
+
+.panel {
+    padding: 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #222222; /* Dark gray background for the panels */
+    color: #fff; /* White text inside the panels */
+    width: 55%; /* Constrain the width of the panels */
+    margin: 0 auto; /* Center the panel content */
+    border: solid 1px;
+    font-size: 20px;
+}
+
+.jautajumns {
+    margin-top: 0;
+    font-size: 40px;
+    color: yellow;
+}
+
+.panel p {
+    margin-bottom: 10px; /* Add spacing between the paragraphs */
+}
+
+.puzzle-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 100px); /* 5 columns */
+    grid-template-rows: repeat(3, 100px);    /* 3 rows */
+    gap: 0; /* No gap between pieces */
+    position: relative;
+    width: 500px; /* 5 pieces, each 100px wide */
+    height: 300px; /* 3 pieces, each 100px tall */
+}
+
+.puzzle-piece {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    cursor: pointer;
+}
+
+#completedButton {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .title {
+        font-size: 40px;
+    }
+
+    .ievads {
+        max-width: 80%;
+        font-size: 25px;
+    }
+
+    .iemesli {
+        grid-template-columns: 1fr 1fr; /* Reduce to 2 columns for small screens */
+    }
+
+    .title-iemesli {
+        font-size: 30px;
+    }
+
+    .accordion {
+        width: 80%; /* Accordion takes more width on mobile */
+        font-size: 18px;
+    }
+
+    .panel {
+        width: 80%; /* Panel also adjusts to mobile */
+    }
+
+    .puzzle-grid {
+        width: 400px; /* Resize grid for mobile */
+        height: 240px; /* Adjust height proportionally */
+        grid-template-columns: repeat(4, 80px); /* 4 columns for smaller screens */
+        grid-template-rows: repeat(3, 80px);    /* Smaller puzzle pieces */
+    }
+
+    .puzzle-piece {
+        width: 80px; /* Reduced size of puzzle pieces */
+        height: 80px;
+    }
+}
+
+/* Even smaller screens like phones in portrait mode */
+@media (max-width: 480px) {
+    .title {
+        font-size: 35px;
+    }
+
+    .ievads {
+        max-width: 90%;
+        font-size: 22px;
+    }
+
+    .iemesli {
+        grid-template-columns: 1fr; /* Stack items vertically */
+    }
+
+    .title-iemesli {
+        font-size: 25px;
+    }
+
+    .accordion {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .panel {
+        width: 90%;
+    }
+
+    .puzzle-grid {
+        width: 320px; /* Even smaller grid width for tiny screens */
+        height: 190px;
+        grid-template-columns: repeat(3, 70px); /* 3 columns */
+        grid-template-rows: repeat(3, 70px);    /* 3 smaller rows */
+    }
+
+    .puzzle-piece {
+        width: 70px; /* Even smaller puzzle pieces */
+        height: 70px;
+    }
+}
